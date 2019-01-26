@@ -8,13 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Storyboarded {
 
+    
+    //MARK:- Properties
+    weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    //MARK:-
+    @IBAction func buyButtonTapped(_ sender: Any) {
+        coordinator?.buySubscription()
+    }
+    
+    @IBAction func createButtonTapped(_ sender: Any) {
+        coordinator?.createAccount()
+    }
+    
 
 }
 
